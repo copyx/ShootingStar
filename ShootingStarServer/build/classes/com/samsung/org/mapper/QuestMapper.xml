@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+  'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='com.samsung.org.dao.QuestDao'>
+
+	<resultMap type='Quest' id='QuestResult'>
+		<id property='client' column='client' />
+		<result property='time' column='time' />
+		<result property='title' column='title' />
+		<result property='stars' column='stars' />
+		<result property='category' column='category' />
+		<result property='area' column='area' />
+		<result property='time_limit' column='time_limit' />
+		<result property='contents' column='contents' />
+		<result property='city' column='city' />
+		<result property='worker' column='worker' />
+		<result property='lat' column='lat' />
+		<result property='lag' column='lag' />
+	</resultMap>
+
+	<!-- select All -->
+	<select id='selectAllQuest' parameterType='String' resultMap='QuestResult'>
+		SELECT client, time , title, stars, category, area, time_limit, contents, city,
+  	    ROUND( 1000*6371* ACOS( COS( RADIANS(37.50884924093008) ) * COS( RADIANS( lat) ) * COS( RADIANS(  lag ) - RADIANS(127.06317186355591) )
+        + SIN( RADIANS(37.50884924093008) ) * SIN( RADIANS(  lat) ) ),2 ) 
+		AS distance FROM quest HAVING distance > 0 ORDER BY distance;
+	</select>
+	
+	<insert id='insertQuest' parameterType='Quest'>
+		insert into 
+		quest (time, worker, client, title, stars, category, time_limit, contents, city, area, lat, lag)
+		values(DEFAULT, #{worker}, #{client},#{title},#{stars},#{category},#{time_limit},#{contents},#{city},#{area},#{lat},#{lag})
+	</insert>
+	
+	<delete id='deleteQuest' parameterType='java.lang.String'>
+		DELETE FROM quest WHERE client = #{client}
+	</delete>
+
+	<update id='updateQuest' parameterType='Quest'>
+		UPDATE quest
+		SET
+		time = DEFAULT , title = #{title}, stars = #{stars}, city = #{city}, area = #{area} 
+		, category = #{category}, time_limit = #{time_limit}, contents=#{contents}, worker=#{worker}
+		WHERE client = #{client}
+	</update>
+	
+	<select id='selectQuestByCategory' parameterType='java.lang.String' resultMap='QuestResult'>
+		SELECT *
+		FROM quest
+		WHERE category = #{category}
+	</select>
+	
+	<select id='selectQuestByAreaNCity' parameterType='java.lang.String' resultMap='QuestResult'>
+		SELECT *
+		FROM quest
+		WHERE area = #{area} AND city = #{city} 
+	</select>
+
+
+</mapper>

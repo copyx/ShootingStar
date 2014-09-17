@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+var user_ori = {
+		'e_mail' : 'em',
+		'pass' : '123',
+		'city' : 's',
+		'area' : 'm',
+		'stars' : '5'
+	}
+// 	url : "../userInfo/updateuserinfo.json",
+// 	dataType:"text", 
+// 	contentType:"application/json",
+	function test() {
+		console.log(user_ori);
+		var sendData = JSON.stringify(user_ori);
+		$.ajax({
+	         type : "post",
+	         url : "http://192.168.0.25:8080/Soscon/user/insertUser",
+	         dataType:"text", 
+	         contentType:"application/json",
+	         data : sendData,
+	         success : function(data){
+	            console.log(data);
+	         },
+	         error: function(e) {
+	            alert("실패 너");
+	         }
+	      });   
+	}
+</script>
+</head>
+
+
+
+
+<body>
+	<button onclick="test()">Push</button>
+</body>
+</html>

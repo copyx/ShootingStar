@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC '-//mybatis.org//DTD Config 3.0//EN'
+  'http://mybatis.org/dtd/mybatis-3-config.dtd'>
+
+<configuration>
+
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="useGeneratedKeys" value="true" />
+		<setting name="defaultExecutorType" value="REUSE" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="User" type="com.samsung.org.vo.User"></typeAlias>
+		<typeAlias alias="Quest" type="com.samsung.org.vo.Quest"></typeAlias>
+		<typeAlias alias="Apply" type="com.samsung.org.vo.Apply"></typeAlias>
+		<typeAlias alias="SearchQuest" type="com.samsung.org.model.SearchQuest"></typeAlias>
+
+	</typeAliases>
+
+
+
+	<mappers>
+		<mapper resource="com/samsung/org/mapper/UserMapper.xml"></mapper>
+		<mapper resource="com/samsung/org/mapper/QuestMapper.xml"></mapper>
+		<mapper resource="com/samsung/org/mapper/ApplyMapper.xml"></mapper>
+		
+	</mappers>
+
+
+
+</configuration>

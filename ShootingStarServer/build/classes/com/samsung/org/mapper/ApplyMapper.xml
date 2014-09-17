@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC '-//mybatis.org//DTD Mapper 3.0//EN'
+  'http://mybatis.org/dtd/mybatis-3-mapper.dtd'>
+
+<mapper namespace='com.samsung.org.dao.ApplyDao'>
+
+	<resultMap type='Apply' id='ApplyResult'>
+		<id property='client' column='client' />
+		<result property='time' column='time' />
+		<result property='worker' column='worker' />
+	</resultMap>
+
+	<!-- select All -->
+	<select id='selectAllApply' parameterType='String' resultMap='ApplyResult'>
+		SELECT *
+		FROM apply
+	</select>
+	
+	<select id='selectApply' parameterType='String' resultMap='ApplyResult'>
+		SELECT *
+		FROM apply
+		where client=#{client}
+	</select>
+	
+	<insert id='insertApply' parameterType='Apply'>
+		insert into 
+		apply (time, client, worker)
+		values(#{time},#{client},#{worker})
+	</insert>
+	
+	<delete id='deleteApply' parameterType='java.lang.String'>
+		DELETE FROM Apply WHERE client = #{client}
+	</delete>
+
+	<update id='updateApply' parameterType='Apply'>
+		UPDATE apply
+		SET
+		time = #{time} , client = #{client}, worker = #{worker}
+		WHERE client = #{client}
+	</update>
+	
+
+
+</mapper>
