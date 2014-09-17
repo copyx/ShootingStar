@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Shooting Star : User Info</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--  환면에넓이에 따라 변경되게 설정 -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--  호환성 설정 -->
+<link rel='stylesheet' type='text/css' href='journal/bootstrap.min.css' />
+<link rel='stylesheet' type='text/css' href='journal/bootstra.css' />
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/js/user.js"></script>
+<script src="/js/event.js"></script>
+<script src="/js/map.js"></script>
+<script src="/js/share.js"></script>
+    <script src="/js/quest.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  	<div class="bs-docs-section">
+      	<form class="form-horizontal">
+      	<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">등록</h3>
+		  </div>
+  			<div class="panel-body">
+		    <div class="form-group">
+		      <label for="inputEmail" class="col-lg-2 control-label">Title</label>
+		      <div class="col-lg-10">
+		        <input type="text" class="form-control" id="quest_insert_title" placeholder="우리 집 고양이를 찾아주세요...">
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <label for="select" class="col-lg-2 control-label">Category</label>
+		      <div class="col-lg-10">
+		        <select class="form-control" id="quest_insert_category">
+		          <option>심부름</option>
+		          <option>물품 대여</option>
+		          <option>기타</option>
+		        </select>
+		      </div>
+		      <label for="select" class="col-lg-2 control-label">Stars</label>
+		      <div class="col-lg-10">
+		        <select class="form-control" id="quest_insert_stars">
+		          <option>0</option>
+		          <option>1</option>
+		          <option>2</option>
+		          <option>3</option>
+		          <option>4</option>
+		          <option>5</option>
+		        </select>
+		      </div>
+
+		    </div>
+		    <div class="form-group">
+		      <label for="textArea" class="col-lg-2 control-label">Contents</label>
+		      <div class="col-lg-10">
+		        <textarea class="form-control" rows="3" id="quest_insert_contents"></textarea>
+		        <span class="help-block">가능한 자세하고 정확하게 서술해주세요.</span>
+		      </div>
+		    </div>
+		    <div class="form-group">
+		      <div class="col-lg-10 col-lg-offset-2">
+		        <input type="button" class="btn btn-default" onclick="history.back();" value='Cancel'></input>
+		        <button id="insert_quest" type="submit" onsubmit= "return false;" class="btn btn-primary">Submit</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		</form>
+  	</div>
+  </body>
+</html>

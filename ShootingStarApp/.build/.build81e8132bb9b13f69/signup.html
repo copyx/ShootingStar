@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Shooting Star : Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--  환면에넓이에 따라 변경되게 설정 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<!--  호환성 설정 -->
+    <link rel='stylesheet' type='text/css' href='journal/bootstrap.min.css' />
+    <link rel='stylesheet' type='text/css' href='journal/bootstra.css' />
+    <script src="http://code.jquery.com/jquery.js"></script>
+   	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="/js/user.js"></script>
+<script src="/js/event.js"></script>
+    <script src="/js/quest.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="well bs-component">
+            <form class="form-horizontal">
+              <fieldset>
+              <legend>Signup</legend>
+                <!-- ID -->
+                <div class="form-group">
+                  <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control" id="user_insert_e_mail" placeholder="example@example.com">
+                  </div>
+                </div>
+                
+                <!-- PASSWORD -->
+                <div class="form-group">
+                  <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                  <div class="col-lg-10">
+                    <input type="password" class="form-control" id="user_insert_password" placeholder="8 - 14 characters">
+                  </div>
+                </div>
+                
+                <!-- CITY -->
+                <div class="form-group">
+                  <label for="inputCity" class="col-lg-2 control-label">City</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control" id="user_insert_city" placeholder="Seoul">
+                  </div>
+                </div>
+                
+                <!-- AREA -->
+                <div class="form-group">
+                  <label for="inputArea" class="col-lg-2 control-label">Area</label>
+                  <div class="col-lg-10">
+                    <input type="text" class="form-control" id="user_insert_area" placeholder="Seocho">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <div class="col-lg-10 col-lg-offset-2">
+                    <input type="button" class="btn btn-default" onclick="history.back();" value='Cancel'></input>
+                    <button id="insert_user" type="submit" onsubmit= "return false;" class="btn btn-primary">Submit</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+  </body>
+  
+</html>
